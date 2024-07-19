@@ -1,0 +1,51 @@
+/* Estilos gerais para o formulário */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 35%;
+  min-width: 25rem;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Estilos para os inputs do formulário */
+.form input {
+  width: 100%;
+  padding: 14px 15px;
+  margin-bottom: 1.5em;
+  border-radius: 4px;
+  border: 1px solid #282c34;
+  box-sizing: border-box;
+}
+
+/* Estilos específicos para o botão de submit */
+.form input[type="submit"] {
+  background-color: #61dafb;
+  border: 1px solid #61dafb;
+  color: #000;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #fff;
+  border-color: #282c34;
+}
+
+/* Estilos para o contêiner dos inputs */
+.input_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Estilos para os labels dos inputs */
+.input_container label {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
