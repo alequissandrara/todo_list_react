@@ -1,9 +1,14 @@
-import React from "react";
+//Interfaces
+import { ITask } from "../interfaces/Task";
 
-type Props = {};
+//Css
+
+type Props = {
+  taskList: ITask[];
+};
 
 const TaskList = (props: Props) => {
-  return <div>Lista Tarefa</div>;
+  return <></>;
 };
 
 export default TaskList;
