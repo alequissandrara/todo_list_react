@@ -16,6 +16,7 @@ import { ITask } from "./interfaces/Task";
 // Função principal do componente
 function App() {
   const [taskList, setTaskList] = useState<ITask[]>([]);
+  const [taskToUpdate, setTaskToUpadate] = useState<ITask | null>(null);
 
   const deleteTask = (id: number) => {
     setTaskList(
@@ -35,14 +36,32 @@ function App() {
     }
   };
 
-  const editTask = (): void => {
+  const editTask = (task: ITask): void => {
     hideOrShowModal(true);
+    setTaskToUpadate(task);
+  };
+
+  const updateTask = (id: number, title: string, difficulty: number) => {
+    const updateTask: ITask = { id, title, difficulty };
+    const updateItems = taskList.map((task) => {
+      return task.id === updateTask.id ? updateTask : task;
+    });
+
+    setTaskList(updateItems);
+    hideOrShowModal(false);
   };
 
   return (
     <div>
       <Modal
-        children={<TaskForm btnText="Editar Tarefa" taskList={taskList} />}
+        children={
+          <TaskForm
+            btnText="Editar Tarefa"
+            taskList={taskList}
+            task={taskToUpdate}
+            handleUpdate={updateTask}
+          />
+        }
       />
       <Header />
       <main className={styles.main}>
